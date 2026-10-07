@@ -121,21 +121,6 @@
     }, { passive: true });
   }
 
-  function initPageIntro() {
-    if (reduceMotion) return;
-    var intro = document.querySelector('.page-intro');
-    if (!intro) return;
-    setTimeout(function () {
-      intro.classList.add('open');
-    }, 100);
-    setTimeout(function () {
-      intro.style.opacity = '0';
-      intro.style.visibility = 'hidden';
-    }, 1000);
-    setTimeout(function () {
-      intro.remove();
-    }, 1800);
-  }
 
   function initWebGL() {
     if (!window.MotionGraphics || !window.WebGLCore || !window.Shaders) return;
@@ -154,7 +139,6 @@
     initReveal();
     initProgress();
     initParallax();
-    initPageIntro();
   }
 
   if (document.readyState === 'loading') {

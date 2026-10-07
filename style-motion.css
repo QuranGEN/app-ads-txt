@@ -1,4 +1,4 @@
-/* ——— WebGL motion canvas ——— */
+/* ——— WebGL motion canvas: global fixed background layer ——— */
 .motion-canvas {
   position: fixed;
   inset: 0;
@@ -6,10 +6,15 @@
   height: 100%;
   pointer-events: none;
   z-index: 0;
+  display: block;
 }
 
-.hero,
-.page {
+/* everything readable sits above the shader */
+body > header.site,
+body > .hero,
+body > main,
+body > footer.site,
+body > .wrap {
   position: relative;
   z-index: 1;
 }
@@ -88,50 +93,6 @@
   transform: translate(-50%, -50%);
 }
 
-/* ——— page intro curtain ——— */
-.page-intro {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: flex;
-  pointer-events: none;
-}
-.page-intro .panel {
-  flex: 1;
-  background: var(--space);
-  transition: transform .8s cubic-bezier(0.76, 0, 0.24, 1);
-}
-.page-intro .panel.left {
-  transform: translateX(0);
-}
-.page-intro .panel.right {
-  transform: translateX(0);
-}
-.page-intro.open .panel.left {
-  transform: translateX(-100%);
-}
-.page-intro.open .panel.right {
-  transform: translateX(100%);
-}
-.page-intro .logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: 6px;
-  color: #fff;
-  opacity: 0;
-  transition: opacity .4s ease .2s;
-}
-.page-intro.open .logo {
-  opacity: 1;
-}
-.page-intro .logo span {
-  color: var(--gold);
-}
-
 /* ——— gallery reveal ——— */
 .shots figure.reveal {
   clip-path: circle(0% at 50% 50%);
@@ -150,7 +111,6 @@
 @media (prefers-reduced-motion: reduce) {
   .motion-canvas { display: none; }
   .mg-cursor, .mg-cursor-ring { display: none; }
-  .page-intro { display: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .card { transform: none; transition: none; }
 }
