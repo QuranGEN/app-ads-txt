@@ -1,0 +1,156 @@
+/* ——— WebGL motion canvas ——— */
+.motion-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero .wrap,
+.page .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* ——— scroll progress ——— */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 100;
+  background: var(--gold);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+/* ——— reveal on scroll ——— */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s cubic-bezier(0.16, 1, 0.3, 1), transform .7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal[data-delay="1"] { transition-delay: .1s; }
+.reveal[data-delay="2"] { transition-delay: .2s; }
+.reveal[data-delay="3"] { transition-delay: .3s; }
+.reveal[data-delay="4"] { transition-delay: .4s; }
+.reveal[data-delay="5"] { transition-delay: .5s; }
+.reveal[data-delay="6"] { transition-delay: .6s; }
+
+/* ——— card tilt ——— */
+.card {
+  transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .3s ease, box-shadow .25s ease;
+}
+
+/* ——— custom cursor ——— */
+.mg-cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: width .25s ease, height .25s ease;
+}
+.mg-cursor.hover {
+  width: 14px;
+  height: 14px;
+}
+.mg-cursor-ring {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 215, 94, .5);
+  pointer-events: none;
+  z-index: 9998;
+  transition: width .3s ease, height .3s ease, border-color .3s ease;
+}
+.mg-cursor-ring::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  transform: translate(-50%, -50%);
+}
+
+/* ——— page intro curtain ——— */
+.page-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  pointer-events: none;
+}
+.page-intro .panel {
+  flex: 1;
+  background: var(--space);
+  transition: transform .8s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.page-intro .panel.left {
+  transform: translateX(0);
+}
+.page-intro .panel.right {
+  transform: translateX(0);
+}
+.page-intro.open .panel.left {
+  transform: translateX(-100%);
+}
+.page-intro.open .panel.right {
+  transform: translateX(100%);
+}
+.page-intro .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: #fff;
+  opacity: 0;
+  transition: opacity .4s ease .2s;
+}
+.page-intro.open .logo {
+  opacity: 1;
+}
+.page-intro .logo span {
+  color: var(--gold);
+}
+
+/* ——— gallery reveal ——— */
+.shots figure.reveal {
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path .8s cubic-bezier(0.16, 1, 0.3, 1), opacity .7s ease;
+}
+.shots figure.reveal.visible {
+  clip-path: circle(100% at 50% 50%);
+}
+
+/* ——— hero content parallax ——— */
+.hero .wrap {
+  transition: opacity .1s linear;
+}
+
+/* ——— reduced motion ——— */
+@media (prefers-reduced-motion: reduce) {
+  .motion-canvas { display: none; }
+  .mg-cursor, .mg-cursor-ring { display: none; }
+  .page-intro { display: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .card { transform: none; transition: none; }
+}
