@@ -129,8 +129,12 @@
       intro.classList.add('open');
     }, 100);
     setTimeout(function () {
-      intro.style.display = 'none';
-    }, 1200);
+      intro.style.opacity = '0';
+      intro.style.visibility = 'hidden';
+    }, 1000);
+    setTimeout(function () {
+      intro.remove();
+    }, 1800);
   }
 
   function initWebGL() {

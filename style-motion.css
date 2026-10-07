@@ -1,6 +1,6 @@
 /* ——— WebGL motion canvas ——— */
 .motion-canvas {
-  position: absolute;
+  position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
@@ -8,8 +8,8 @@
   z-index: 0;
 }
 
-.hero .wrap,
-.page .wrap {
+.hero,
+.page {
   position: relative;
   z-index: 1;
 }
