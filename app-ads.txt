@@ -1,1 +1,10 @@
+# app-ads.txt — QuranGen Labs (served at domain root for AdMob + Appodeal verification)
+# Lines starting with # are comments and ignored by crawlers.
+# See DEPLOY.md for setup + verification steps.
+
+# --- Google AdMob (live: matches https://qurangen.netlify.app/app-ads.txt) ---
 google.com, pub-8182630534220044, DIRECT, f08c47fec0942fa0
+
+# --- Appodeal (TODO: append the snippet from app.appodeal.com/user after moderation clears) ---
+# Example shape:
+# appodeal.com, <your-appodeal-id>, DIRECT, <hash>

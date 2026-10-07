@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Live domain: https://qurangen.netlify.app -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://qurangen.netlify.app/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://qurangen.netlify.app/inkblade.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://qurangen.netlify.app/pixel-space.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://qurangen.netlify.app/support.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://qurangen.netlify.app/privacy-inkblade.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://qurangen.netlify.app/privacy-pixel-space.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>

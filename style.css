@@ -1,0 +1,121 @@
+/* QuranGen Labs — studio site. No frameworks, no tracking, no webfonts.
+   Two themed wings under one roof: paper-and-ink (Inkblade) + deep space
+   (Pixel Space Dodge). System font stacks only: fast + premium. */
+:root {
+  --gold: #b98a1f;
+  --vermillion: #c63f22;
+  --ink: #2a2419;
+  --paper: #f3ead2;
+  --paper-deep: #e9dcbd;
+  --space: #080d22;
+  --space-panel: #0e1430;
+  --space-line: rgba(255, 255, 255, .09);
+  --paper-line: rgba(42, 36, 25, .14);
+  --radius: 14px;
+  --max: 1060px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  background: var(--space);
+  color: #eef1ff;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #ffd75e; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+
+/* ——— header ——— */
+header.site {
+  border-bottom: 1px solid var(--space-line);
+  background: rgba(8, 13, 34, .9);
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: blur(8px);
+}
+.nav { display: flex; align-items: center; gap: 26px; padding: 14px 22px; max-width: var(--max); margin: 0 auto; }
+.brand { font-weight: 800; letter-spacing: 3px; font-size: 14px; color: #fff; text-decoration: none; }
+.brand span { color: #ffd75e; }
+.nav nav { margin-left: auto; display: flex; gap: 20px; }
+.nav nav a { color: #c6cbe4; text-decoration: none; font-size: 14px; font-weight: 600; }
+.nav nav a:hover { color: #fff; }
+
+/* ——— hero ——— */
+.hero { text-align: center; padding: 84px 22px 60px; }
+.kicker { font-size: 12px; letter-spacing: 4px; font-weight: 800; color: #ffd75e; text-transform: uppercase; }
+.hero h1 { font-size: clamp(38px, 6vw, 64px); letter-spacing: -1.5px; line-height: 1.05; margin: 16px 0 14px; }
+.hero p.sub { color: #aab1d6; font-size: 18px; max-width: 640px; margin: 0 auto; }
+.hero .seals { display: flex; gap: 12px; justify-content: center; margin-top: 26px; flex-wrap: wrap; }
+.pill {
+  border: 1px solid var(--space-line); border-radius: 999px;
+  padding: 7px 16px; font-size: 13px; color: #c6cbe4; font-weight: 600;
+}
+
+/* ——— game cards ——— */
+.games { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; padding: 10px 0 70px; }
+@media (max-width: 760px) { .games { grid-template-columns: 1fr; } }
+.card {
+  border-radius: var(--radius); overflow: hidden; text-decoration: none; color: inherit;
+  border: 1px solid var(--space-line); display: flex; flex-direction: column;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.card:hover { transform: translateY(-4px); }
+.card .art { padding: 40px 30px 10px; display: flex; gap: 20px; align-items: center; }
+.card .art img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 10px 30px rgba(0,0,0,.45); }
+.card .art h2 { font-size: 26px; letter-spacing: -.5px; }
+.card .art .tag { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; opacity: .75; }
+.card .body { padding: 6px 30px 30px; }
+.card .body p { color: #aab1d6; font-size: 15px; margin: 8px 0 18px; }
+.card.ink { background: var(--paper); color: var(--ink); }
+.card.ink .body p { color: #5c543f; }
+.card.ink .cta { background: var(--ink); color: var(--paper); }
+.card.space { background: var(--space-panel); }
+.cta {
+  display: inline-block; border-radius: 10px; padding: 11px 22px;
+  background: #ffd75e; color: #1a1405; font-weight: 800; font-size: 14px; text-decoration: none;
+}
+
+/* ——— content pages ——— */
+.page { padding: 56px 0 70px; }
+.page h1 { font-size: clamp(32px, 5vw, 50px); letter-spacing: -1px; margin: 12px 0 8px; }
+.page .lede { color: #aab1d6; font-size: 18px; max-width: 680px; }
+.page.paper { background: var(--paper); color: var(--ink); }
+.page.paper .lede, .page.paper .feat p { color: #5c543f; }
+.page.paper .kicker { color: var(--vermillion); }
+.feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 34px 0; }
+.feat { border: 1px solid var(--space-line); border-radius: var(--radius); padding: 20px; background: rgba(255,255,255,.02); }
+.page.paper .feat { border-color: var(--paper-line); background: rgba(255,255,255,.4); }
+.feat h3 { font-size: 16px; margin-bottom: 6px; }
+.feat p { font-size: 14px; color: #aab1d6; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 10px 0 34px; }
+.shots figure { border: 1px solid var(--space-line); border-radius: 12px; overflow: hidden; background: #000; }
+.page.paper .shots figure { border-color: var(--paper-line); }
+.shots img { width: 100%; display: block; }
+.shots figcaption { font-size: 12.5px; padding: 8px 12px; color: #aab1d6; }
+.page.paper .shots figcaption { color: #5c543f; background: rgba(255,255,255,.5); }
+.shot-placeholder {
+  aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
+  background: repeating-linear-gradient(45deg, rgba(0,0,0,.06) 0 12px, transparent 12px 24px);
+  color: #8a846e; font-size: 13px; font-weight: 700; text-align: center; padding: 20px;
+}
+.store-row { display: flex; gap: 14px; align-items: center; margin-top: 26px; flex-wrap: wrap; }
+.store-badge {
+  display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+  border: 1px solid var(--space-line); border-radius: 12px; padding: 10px 18px;
+  color: #fff; font-weight: 700; font-size: 15px; background: #000;
+}
+.page.paper .store-badge { border-color: var(--paper-line); }
+
+/* ——— support ——— */
+.faq { margin: 26px 0; display: grid; gap: 12px; }
+.faq details { border: 1px solid var(--space-line); border-radius: 12px; padding: 14px 18px; }
+.faq summary { font-weight: 700; cursor: pointer; }
+.faq p { color: #aab1d6; font-size: 15px; margin-top: 8px; }
+
+/* ——— footer ——— */
+footer.site { border-top: 1px solid var(--space-line); padding: 30px 0 44px; color: #8b91b8; font-size: 13.5px; }
+footer.site .wrap { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+footer.site nav { margin-left: auto; display: flex; gap: 16px; flex-wrap: wrap; }
+footer.site a { color: #aab1d6; text-decoration: none; }
+footer.site a:hover { color: #fff; }
+@media (prefers-reduced-motion: reduce) { * { transition: none; scroll-behavior: auto; } }
