@@ -4,13 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="QuranGen Labs — indie mobile game studio. Inkblade: a hand-drawn sumi-e dungeon saga. Pixel Space Dodge: a neon arcade space dodger.">
+<link rel="canonical" href="https://qurangen.netlify.app/">
 <meta property="og:title" content="QuranGen Labs — Indie Game Studio">
 <meta property="og:description" content="Hand-made mobile games. Inkblade + Pixel Space Dodge.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://qurangen.netlify.app/">
+<meta property="og:image" content="https://qurangen.netlify.app/assets/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QuranGen Labs — Indie Game Studio">
+<meta name="twitter:description" content="Hand-made mobile games. Inkblade + Pixel Space Dodge.">
+<meta name="twitter:image" content="https://qurangen.netlify.app/assets/og-card.png">
 <meta name="theme-color" content="#080d22">
 <title>QuranGen Labs — Indie Game Studio</title>
 <link rel="icon" type="image/png" href="assets/inkblade-icon-192.png">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"QuranGen Labs",
+ "url":"https://qurangen.netlify.app/","email":"qurangen.us@gmail.com",
+ "sameAs":["https://play.google.com/store/apps/details?id=com.inkblade.app",
+            "https://play.google.com/store/apps/details?id=com.retrospace.app"]}
+</script>
 </head>
 <body>
 <header class="site"><div class="nav">
@@ -18,43 +31,65 @@
   <nav><a href="inkblade.html">Inkblade</a><a href="pixel-space.html">Pixel Space Dodge</a><a href="support.html">Support</a></nav>
 </div></header>
 
-<section class="hero wrap">
-  <div class="kicker">Indie mobile game studio</div>
-  <h1>Games drawn<br>to be played.</h1>
-  <p class="sub">Two hand-made arcade worlds. No accounts, no tracking, no noise — just download and play.</p>
-  <div class="seals">
-    <span class="pill">100% free to play</span>
-    <span class="pill">Offline friendly</span>
-    <span class="pill">No accounts</span>
-    <span class="pill">No tracking</span>
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Indie mobile game studio</div>
+    <h1>Games drawn<br><em>to be played.</em></h1>
+    <p class="sub">Two hand-made arcade worlds. No accounts, no tracking, no noise — just download and play.</p>
+    <div class="seals">
+      <span class="pill">100% free to play</span>
+      <span class="pill">Offline friendly</span>
+      <span class="pill">No accounts</span>
+      <span class="pill">No tracking</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>2</b><span>games live</span></div>
+      <div class="stat"><b>196</b><span>hand-tuned stages</span></div>
+      <div class="stat"><b>22</b><span>boss fights</span></div>
+    </div>
   </div>
 </section>
 
-<main class="wrap games">
-  <a class="card ink" href="inkblade.html">
-    <div class="art">
-      <img src="assets/inkblade-icon-192.png" alt="Inkblade app icon" width="96" height="96">
-      <div><div class="tag">Sumi-e dungeon saga</div><h2>Inkblade</h2></div>
-    </div>
-    <div class="body">
-      <p>A hand-drawn ink roguelike. One thumb steers — drag to move, stand still to strike. 12 tomes, 96 pages, 12 three-phase sovereigns.</p>
-      <span class="cta">Explore Inkblade →</span>
-    </div>
-  </a>
-  <a class="card space" href="pixel-space.html">
-    <div class="art">
-      <img src="assets/pixel-space-icon-192.png" alt="Pixel Space Dodge app icon" width="96" height="96">
-      <div><div class="tag">Neon arcade dodger</div><h2>Pixel Space Dodge</h2></div>
-    </div>
-    <div class="body">
-      <p>Thread the storm. 100 hand-tuned levels across 10 zones, 8 unlockable ships, endless void mode, daily missions and boss fights.</p>
-      <span class="cta">Explore Pixel Space Dodge →</span>
-    </div>
-  </a>
+<main class="wrap section">
+  <div class="sec-head"><span class="sec-num">01</span><h2>The games</h2></div>
+  <div class="games">
+    <a class="card ink" href="inkblade.html">
+      <div class="band"></div>
+      <div class="art">
+        <img src="assets/inkblade-icon-192.png" alt="Inkblade app icon" width="96" height="96">
+        <div><div class="tag">Sumi-e dungeon saga</div><h2>Inkblade</h2></div>
+      </div>
+      <div class="body">
+        <p>A hand-drawn ink roguelike. One thumb steers — drag to move, stand still to strike. 12 tomes, 96 pages, 12 three-phase sovereigns.</p>
+        <span class="cta">Explore Inkblade →</span>
+      </div>
+    </a>
+    <a class="card space" href="pixel-space.html">
+      <div class="band"></div>
+      <div class="art">
+        <img src="assets/pixel-space-icon-192.png" alt="Pixel Space Dodge app icon" width="96" height="96">
+        <div><div class="tag">Neon arcade dodger</div><h2>Pixel Space Dodge</h2></div>
+      </div>
+      <div class="body">
+        <p>Thread the storm. 100 hand-tuned levels across 10 zones, 8 unlockable ships, endless void mode, daily missions and boss fights.</p>
+        <span class="cta">Explore Pixel Space Dodge →</span>
+      </div>
+    </a>
+  </div>
 </main>
 
+<section class="wrap section" style="padding-top:0">
+  <div class="sec-head"><span class="sec-num">02</span><h2>How we build</h2></div>
+  <div class="ethos">
+    <div><b>🎮 Gameplay first</b><span>One-thumb controls, 60fps, readable in a glance.</span></div>
+    <div><b>🔒 Respect by design</b><span>Local saves. No accounts. No tracking SDKs.</span></div>
+    <div><b>✋ Fair monetization</b><span>Free to play. Ads optional, purchases honest.</span></div>
+    <div><b>📴 Offline friendly</b><span>Full games, playable anywhere once installed.</span></div>
+  </div>
+</section>
+
 <footer class="site"><div class="wrap">
-  <span>© 2026 QuranGen Labs · qurangen.us@gmail.com</span>
+  <span>© 2026 QuranGen Labs · <a href="mailto:qurangen.us@gmail.com">qurangen.us@gmail.com</a></span>
   <nav><a href="privacy-inkblade.html">Inkblade Privacy</a><a href="privacy-pixel-space.html">Pixel Space Privacy</a><a href="support.html">Support</a></nav>
 </div></footer>
 </body>

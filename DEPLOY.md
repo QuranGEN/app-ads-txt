@@ -1,27 +1,24 @@
-# Deploy — QuranGen Labs studio site
+# Deploy — QuranGen Labs studio site (LIVE: https://qurangen.netlify.app)
 
 Repo root = domain root. `index.html`, `app-ads.txt`, `robots.txt`,
-`sitemap.xml` must all sit at the top level (they do).
+`sitemap.xml`, `_headers` must all sit at the top level (they do).
+Deploy path: push to `QuranGEN/app-ads-txt:main` → Netlify auto-publishes.
 
-## 1. Before first deploy — replace placeholders (5 min)
+## 1. Placeholders — DONE except Play Console links (§3)
 
-| Placeholder | Files | Replace with |
-|---|---|---|
-| `YOUR-DOMAIN` | `robots.txt`, `sitemap.xml` | `https://your-domain` (no trailing slash) |
-| Play badge `href="#"` | `inkblade.html`, `pixel-space.html` | Live Play listing URLs (`com.inkblade.app`, `com.retrospace.app`) |
-| `og:image` (missing) | all pages | Absolute URL to an uploaded screenshot once live |
-| `app-ads.txt` TODO lines | `app-ads.txt` | AdMob publisher lines (AdMob console → Apps → app-ads.txt) |
+| Placeholder | Status |
+|---|---|
+| Domain (`robots.txt`, `sitemap.xml`, canonical, OG) | ✅ `https://qurangen.netlify.app` |
+| Play badges | ✅ `com.inkblade.app` + `com.retrospace.app` live URLs |
+| `og:image` | ✅ `assets/og-card.png` (1200×630 generated) |
+| `app-ads.txt` AdMob | ✅ `pub-8182630534220044` live; Appodeal lines pending moderation |
 
-## 2. Push (GitHub Pages)
+## 2. Push (Netlify via GitHub — current)
 
 ```bash
-git init && git add -A && git commit -m "studio site v1"
-gh repo create qurangen-labs --public --source=. --push
-# Settings → Pages → Deploy from branch → main → / (root)
-# Settings → Pages → Custom domain → your-domain → Enforce HTTPS ✓
+git add -A && git commit -m "..." && git push origin main
+# Netlify auto-deploys from QuranGEN/app-ads-txt:main in ~60s
 ```
-
-Cloudflare Pages works identically (build command: none, output: `/`).
 
 ## 3. Play Console (both games)
 
