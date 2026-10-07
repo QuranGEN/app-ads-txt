@@ -176,4 +176,32 @@ footer.site .wrap { display: flex; gap: 18px; flex-wrap: wrap; align-items: cent
 footer.site nav { margin-left: auto; display: flex; gap: 16px; flex-wrap: wrap; }
 footer.site a { color: #aab1d6; text-decoration: none; }
 footer.site a:hover { color: #fff; }
+
+/* ——— mobile ——— */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-x: hidden; }
+img { max-width: 100%; }
+.nav nav a, .cta, .store-badge, .faq summary { min-height: 44px; }
+.nav nav a { display: inline-flex; align-items: center; }
+@media (max-width: 640px) {
+  .hero { padding: 64px 20px 46px; }
+  .hero p.sub { font-size: 16px; }
+  .stats { gap: 22px; }
+  .stat b { font-size: 24px; }
+  .page { padding: 40px 0 54px; }
+  .page .lede { font-size: 16px; }
+  .page-head { gap: 14px; }
+  .page-head img.icon { width: 84px; height: 84px; border-radius: 20px; }
+  .meta-facts span { font-size: 12px; }
+  .feat-grid { grid-template-columns: 1fr; }
+  .card .art { padding: 0 20px; }
+  .card .art img { width: 76px; height: 76px; }
+  .card .art h2 { font-size: 22px; }
+  .card .body { padding: 12px 20px 24px; }
+  .store-badge { width: 100%; justify-content: center; }
+  .sec-head { flex-wrap: wrap; gap: 8px; }
+  .sec-head p { margin-left: 0; width: 100%; }
+  footer.site .wrap { flex-direction: column; align-items: flex-start; gap: 12px; }
+  footer.site nav { margin-left: 0; }
+}
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
